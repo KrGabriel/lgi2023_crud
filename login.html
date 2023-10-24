@@ -57,9 +57,9 @@ button {
 </head>
 <body>
     <div id="login-container">
-        <form id="login-form" action="../crud/login.php" method="POST">
+        <form id="login-form" action="???" onsubmit="return validarDatos()" method="POST">
             <label for="user">Usuario</label>
-            <input type="text" id="user" name="Usuario" required/>
+            <input type="text" id="user" name="usuario" required/>
             
             <label for="pass">Contraseña</label>
             <input type="password" id="pass" name="Contrasenia" required/>
@@ -68,7 +68,7 @@ button {
             
             <button type="submit">Login</button>
 
-            <a href="../crud/add.php">Nuevo Usuario</a>
+            <a href="create_user.html">Nuevo Usuario</a>
         </form>
     </div>
     
@@ -82,6 +82,20 @@ button {
                 passInput.type = "password";
             }
         }
+
+        function validarDatos(){
+            error = false;
+
+            if(document.getElementById('user').value.lenght < 6){
+                error = true;
+            };
+            if(document.getElementById('contrasenia').value.lenght < 6){
+                error = true;
+            };
+
+            return !error;
+        }
+        
     </script>
 </body>
 </html>
