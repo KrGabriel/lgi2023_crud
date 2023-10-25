@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute()) {
             // Usuario creado exitosamente
-            header ("Location: login.html");
+            header ("Location: index.html");
         } else {
             // Error al crear el usuario
             echo "Error al crear el usuario: " . $stmt->error;
